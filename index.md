@@ -1,6 +1,18 @@
 # Nyheter
-
 <div class="pure-g">
+    <div class="pure-u-1-2">
+        <div class="boxy">
+          <h2>Oppdatering fra foredrag</h2>
+          
+          <p>
+          FRØ arrangerte foredrag med Polly Higgins og Charles Eisenstein på Månefisken 11. november. Vi arrangerte også tre foredrag med Federico Pistono i perioden 8. -12. november ved UMB, 657 og Chateau Neuf i samarbeid med StartUMB, 657 og Das Kapital (Radio Nova). En stor takk til dere alle for at dere muliggjorde arrangementene! Thank you so much Polly, Charles and Federico! Awesome lectures!!! You are all improving the world as you speak!
+          </p>
+          <p>
+          <iframe width="560" height="315" src="//www.youtube.com/embed/bTyY2VSq7R4" frameborder="0" allowfullscreen></iframe>
+          </p>
+          
+        </div>
+    </div>    
     <div class="pure-u-1-2">
         <div class="boxy">
           <h2>Foredrag med Polly Higgins og Charles Eisenstein</h2>
