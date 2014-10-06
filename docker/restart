@@ -1,0 +1,9 @@
+#!/bin/bash
+
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+source $DIR/settings.bash
+
+docker stop $webName
+docker restart $dbName
+sleep $dbTimeToStart
+docker start $webName

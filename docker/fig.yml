@@ -1,0 +1,10 @@
+ressursbasert_db:
+    image: mysql
+ressursbasert_web:
+    image: wordpress
+    links:
+        - ressursbasert_db:mysql
+    volumes:
+        - ../http:/var/www/html
+    ports:
+        - "80:80"

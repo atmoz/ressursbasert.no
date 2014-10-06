@@ -1,0 +1,45 @@
+#!/bin/bash
+
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+source $DIR/settings.bash
+
+function start() {
+    if [ -z "$(docker ps -a | grep $1)" ]; then
+        echo "Starting $1 ..."
+        docker run $2
+        sleep 1
+
+        if [ -z "$(docker ps | grep $1)" ]; then
+            docker logs $1
+            echo "$1 failed to start."
+            exit 1
+        fi
+    elif [ -z "$(docker ps | grep $1)" ]; then
+        echo "Starting $1 ..."
+        docker start $1
+    else
+        echo "$1 is already running"
+    fi
+}
+
+function startDb() {
+    start "$1" "-d \
+        --name $1 \
+        -e MYSQL_ROOT_PASSWORD=$2
+        $dbImage"
+    echo -n 'Waiting for DB to initialize ... '
+    sleep $dbTimeToStart
+    echo 'ready!'
+}
+
+function startWeb() {
+    start "$1" "-d \
+        --name $1 \
+        --link $2:mysql \
+        -v $webDir:/var/www/html \
+        -p 80:80 \
+        $webImage"
+}
+
+startDb $dbName $1
+startWeb $webName $dbName
