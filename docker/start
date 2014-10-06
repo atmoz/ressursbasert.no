@@ -39,7 +39,7 @@ function startWeb() {
         --restart=on-failure:10
         --link $2:mysql \
         -v $webDir:/var/www/html \
-        -e VIRTUAL_HOST=ressursbasert.no,frø.org
+        -e VIRTUAL_HOST=ressursbasert.no,frø.org,xn--fr-mka.org
         $webImage"
 }
 
