@@ -5,5 +5,5 @@ webName=ressursbasert_web
 webImage=wordpress:4.0
 
 dbTimeToStart=30
-webDir=$(realpath ..)/http
+webDir=$(realpath $DIR/..)/http
 webPort=80
